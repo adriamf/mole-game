@@ -14,7 +14,7 @@ export default {
     chunkFileNames: '[hash].js',
     assetFileNames: '[hash][extname]',
     format: 'es',
-    dir: 'dist',
+    dir: 'docs',
   },
   preserveEntrySignatures: false,
 
@@ -23,7 +23,7 @@ export default {
     html({
       minify: true,
       injectServiceWorker: true,
-      serviceWorkerPath: 'dist/sw.js',
+      serviceWorkerPath: 'docs/sw.js',
     }),
     /** Resolve bare module imports */
     nodeResolve(),
@@ -36,7 +36,7 @@ export default {
     importMetaAssets(),
     /** Copy assets folder */
     copy({
-      targets: [{ src: 'assets/**/*', dest: './dist/assets' }],
+      targets: [{ src: 'assets/**/*', dest: './docs/assets' }],
       // set flatten to false to preserve folder structure
       flatten: false,
     }),
@@ -65,9 +65,9 @@ export default {
       globIgnores: ['polyfills/*.js', 'nomodule-*.js'],
       navigateFallback: '/index.html',
       // where to output the generated sw
-      swDest: path.join('dist', 'sw.js'),
+      swDest: path.join('docs', 'sw.js'),
       // directory to match patterns against to be precached
-      globDirectory: path.join('dist'),
+      globDirectory: path.join('docs'),
       // cache any html js and css by default
       globPatterns: ['**/*.{html,js,css,webmanifest,png}'],
       skipWaiting: true,
