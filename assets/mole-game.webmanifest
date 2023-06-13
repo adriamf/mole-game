@@ -1,0 +1,13 @@
+{
+  "name": "Mole Game",
+  "short_name": "Mole Game",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./mole.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
